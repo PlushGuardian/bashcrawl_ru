@@ -1,18 +1,17 @@
 
-# You can interact with items in the room (they end with a *)
-# by running them as a shell script.
+# Вы можете взаимодействовать с предметами в комнате (они заканчиваются на *)
+# запуская их как shell-скрипты.
 #
-# For example, to collect treasure:
+# Например, чтобы собрать сокровища:
 #
 # ./treasure
-# 
-# The . means *don't move*, and the name of the script makes the code run.
-# 
-# You have left treasure in the previous room.
-# Go back to a previous directory with two dots,
-# which means *take a step back*.
 #
-# EXAMPLE:
+# Точка означает *не двигаться*, а имя скрипта заставляет код выполняться.
+#
+# Вы оставили сокровище в предыдущей комнате.
+# Вернитесь в предыдущую директорию с помощью двух точек,
+# что означает *шаг назад*.
+#
+# ПРИМЕР:
 #
 # cd ..
-

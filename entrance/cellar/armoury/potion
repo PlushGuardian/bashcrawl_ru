@@ -12,36 +12,36 @@
 # the scrolls. If you're stuck, go to Gitlab and create an issue.
 # We're happy to provide hints.
 #
-echo "You have found a potion bottle of swirling"
-echo "green liquid. Do you want to drink it?"
+
+
+echo "Вы нашли бутылку с зельем, в котором сверкает зеленая жидкость. Хотите ли вы выпить его?"
 printf "\n"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "The taste of a rustic green plant fills your mouth."
-   echo "It warms and strengthens you."
-   printf "\n" 
-   echo "Create a variable for your health points (HP)."
-   echo "You have 15 HP:"
+   echo "Вкус зеленого растения заполняет ваш рот."
+   echo "Оно согревает и укрепляет вас."
+   printf "\n"
+   echo "Создайте переменную для ваших очков здоровья (HP)."
+   echo "У вас 15 HP:"
    echo "$ export HP=15"
    printf "\n"
 else
-   echo "You weren't born yestermorn;"
-   echo "this potion is probably poison."
-   printf "\n"   
-   echo "Create a variable for your health points (HP)."
-   echo "You have 10 HP:"
+   echo "Вы не родились вчера;"
+   echo "это зелье, вероятно, яд."
+   printf "\n"
+   echo "Создайте переменную для ваших очков здоровья (HP)."
+   echo "У вас 10 HP:"
    echo "$ export HP=10"
    printf "\n"
 fi
 
-echo "You can check your health at any time:"
+echo "Вы можете проверить ваше здоровье в любой момент:"
 printf "\n"
 echo "echo \$HP"
 printf "\n"
 mv ../../.chapel ../../chapel 2>/dev/null
-mv ../../.vault ../../vault 2>/dev/null
-mv ../../.scrap ../../scrap 2>/dev/null
+mv ../../.vault ../../vault 2>/dev/nul
 
 
 
@@ -319,9 +319,8 @@ mv ../../.scrap ../../scrap 2>/dev/null
 
 
 # Hmm, that didn't work.
-# Remember, when files end in a * 
+# Remember, when files end in a *
 # it means they are applications.
 # Try this:
 #
 # ./potion
-

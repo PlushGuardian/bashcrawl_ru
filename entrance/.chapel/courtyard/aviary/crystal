@@ -12,17 +12,18 @@
 # the scrolls. If you're stuck, go to Gitlab and create an issue.
 # We're happy to provide hints.
 #
-echo "A white crystal, forged by the Queen of Winter,"
-echo "lies on the frosty ground."
+echo "Белый кристалл, выкованный Королевой Зимы,"
+echo "лежит на морозной земле."
 printf "\n"
-echo "You can prepend this item to your inventory:"
+echo "Вы можете добавить этот предмет в ваш инвентарь:"
 printf "\n"
 echo "$ export I=crystal,\$I"
 printf "\n"
-echo "Remember, you can check your inventory:"
+echo "Помните, вы можете проверить ваш инвентарь:"
 printf "\n"
 echo "echo \$I"
 printf "\n"
+
 #
 #
 #

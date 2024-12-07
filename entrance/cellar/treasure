@@ -15,15 +15,15 @@
 
 if ! grep -Po amulet <<< $I &> /dev/null; then
     printf "\n"
-    echo "You have found an emerald **amulet**!"
+    echo "Вы нашли изумрудный **амулет**!"
     printf "\n"
-    echo "To collect treasure, you must have a variable to hold your inventory."
+    echo "Чтобы собрать сокровища, вам нужно создать переменную для хранения инвентаря."
     printf "\n"
-    echo "Create a variable and add your treasure to it like this:"
+    echo "Создайте переменную и добавьте ваше сокровище в нее так:"
     printf "\n"
     echo "export I=amulet,\$I"
     printf "\n"
-    echo "You can always check your wealth with this command:"
+    echo "Вы всегда можете проверить свое богатство с помощью этой команды:"
     printf "\n"
     echo "echo \$I"
     printf "\n"
@@ -31,7 +31,7 @@ if ! grep -Po amulet <<< $I &> /dev/null; then
     mv ../.vault ../vault 2>/dev/null
     mv ../.scrap ../scrap 2>/dev/null
 else
-    echo "This treasure has already been taken."
+    echo "Это сокровище уже взято."
 fi
 
 
@@ -310,5 +310,3 @@ fi
 # Hmm, that didn't work.
 # Try moving into the armoury, maybe you
 # can come back to this treasure later!
-
-

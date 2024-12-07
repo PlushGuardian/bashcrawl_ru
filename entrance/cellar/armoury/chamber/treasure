@@ -11,24 +11,24 @@
 # When you're ready to continue playing the game, though, stick to
 # the scrolls. If you're stuck, go to Gitlab and create an issue.
 # We're happy to provide hints.
-# 
+#
 echo
 if ! grep -Po coins <<< $I &> /dev/null; then
-    echo "You have found a stash of **coins**!"
-    echo "They are old and worn with age,"
-    echo "but they still gleam in the magical light"
-    echo "emanating from your eyes."
+    echo "Вы нашли запас **монет**!"
+    echo "Они старые и потертые временем,"
+    echo "но все еще блестят в магическом свете,"
+    echo "исходящем от ваших глаз."
     printf "\n"
-    echo "Prepend this item to your inventory:"
+    echo "Добавьте этот предмет в ваш инвентарь:"
     printf "\n"
     echo '$ export I=coins,$I'
     printf "\n"
-    echo "Remember, you can check your inventory:"
+    echo "Помните, вы можете проверить ваш инвентарь:"
     printf "\n"
     echo 'echo $I'
     printf "\n"
 else
-    echo "This treasure has already been taken."
+    echo "Это сокровище уже взято."
 fi
 
 
@@ -357,11 +357,9 @@ fi
 
 
 
-
 # Hmm, that didn't work.
-# Remember, when files end in a * 
+# Remember, when files end in a *
 # it means they are applications.
 # Try this:
 #
 # ./treasure
-

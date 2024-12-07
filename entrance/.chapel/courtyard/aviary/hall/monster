@@ -13,8 +13,8 @@
 # We're happy to provide hints.
 #
 gameover () {
-    echo "You see the corpse of a slain adventurer on the floor of the dungeon." > corpse
-    echo "You find the following items on the corpse:  " >> corpse
+    echo "Вы видите труп убитого приключенца на полу подземелья." > corpse
+    echo "Вы находите следующие предметы на трупе:  " >> corpse
     echo >> corpse
     echo $I >> corpse
     curr=`basename $PWD`
@@ -28,7 +28,7 @@ gameover () {
     $SHELL
 }
 roll() {
-    echo "Enter a number."
+    echo "Введите число."
     read NUM
     ALPHA=$RANDOM
     OMEGA=$RANDOM
@@ -38,76 +38,77 @@ roll() {
     MONSTER=$RANDOM
     MONSTER=`echo $MONSTER | cut -b 1-2`
     NUM=`echo $NUM | cut -b 1-2`
-    echo "The monster rolled " $MONSTER
-    echo "You rolled " $NUM
+    echo "Монстр выбросил " $MONSTER
+    echo "Вы выбросили " $NUM
     resolve
 }
 
 resolve() {
     if ! grep -Po 'sword' <<< $I &> /dev/null; then
-        echo "You do not have a sword!"
+        echo "У вас нет меча!"
         echo
-        echo "Your attacks will be less effective."
+        echo "Ваши атаки будут менее эффективными."
         let NUM=NUM-10
     fi
     if [[ $MONSTER -eq $NUM ]]; then
-	echo "You each parry one another's attacks."
-	echo "Roll again..."
-	roll
+        echo "Вы и монстр парируете атаки друг друга."
+        echo "Бросьте снова..."
+        roll
     fi
-    
+
     if [[ $MONSTER -lt $NUM ]]; then
-       echo "A hit! A palpable hit!"
-       echo "You have slain the beast."
+       echo "Попадание! Точное попадание!"
+       echo "Вы убили чудовище."
        echo '#!/bin/bash
              if ! grep -Po crown <<< $I &> /dev/null; then
-                 echo "You have found a *crown*!" 
-                 echo "Add it to your inventory."
+                 echo "Вы нашли *корону*!"
+                 echo "Добавьте её в ваш инвентарь."
              else
-                 echo "This treasure has already been taken."
+                 echo "Это сокровище уже взято."
             fi' > treasure
        chmod +x treasure
        mv monster carcass
     else
-	echo "Your attack is deflected off the monster's leathery flesh."
-	echo "You take 5 points damage. Deduct this from your HP."
-	echo 'let "HP=HP-5"'
-    let HP=HP-5
-    export HP
-    if [ "$HP" -le 0 ]; then
-        echo "You have been slain by the monster."
-        echo 
-        echo "GAME OVER!"
-        gameover
-        exit 1
-    fi
-	printf "\n"
-	roll
+        echo "Ваша атака отражена с кожаного тела монстра."
+        echo "Вы получаете 5 урона. Отнимите это от ваших HP."
+        echo 'let "HP=HP-5"'
+        let HP=HP-5
+        export HP
+        if [ "$HP" -le 0 ]; then
+            echo "Вы были убиты монстром."
+            echo
+            echo "ИГРА ОКОНЧЕНА!"
+            gameover
+            exit 1
+        fi
+        printf "\n"
+        roll
     fi
 }
 
 if [ "$0" = "./carcass" ]; then
-    echo "You find the carcass of a foul beast."
-    echo 
-    echo "Nothing of interest lies within its remains."
+    echo "Вы находите труп зловещего чудовища."
+    echo
+    echo "В его останках ничего интересного."
     exit 0
 fi
 
-echo "A hulking three-legged beast, with a mouth full of fangs"
-echo "and a barbed tail and 8 arms, lumbers toward you."
+echo "Крепкое чудовище с тремя ногами, полное клыков"
+echo "и с бархатным хвостом и 8 руками медленно приближается к вам."
 printf "\n"
-echo "If you have a sword, you can attack."
-echo "Otherwise, you should run."
-echo "Do you want to attack? y/n"
+echo "Если у вас есть меч, вы можете атаковать."
+echo "Если нет, лучше бежать."
+echo "Хотите атаковать? y/n"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ];then
     roll
 else
-    echo "You wisely turn and flee."
-    echo "Quickly cd to the previous directory."
+    echo "Вы разумно поворачиваетесь и убегаете."
+    echo "Быстро перейдите в предыдущую директорию."
 fi
 printf "\n"
+
 #
 #
 #

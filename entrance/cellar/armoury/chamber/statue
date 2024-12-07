@@ -11,11 +11,10 @@
 # When you're ready to continue playing the game, though, stick to
 # the scrolls. If you're stuck, go to Gitlab and create an issue.
 # We're happy to provide hints.
-# 
-
+#
 gameover () {
-    echo "You see the corpse of a slain adventurer on the floor of the dungeon." > corpse
-    echo "You find the following items on the corpse:  " >> corpse
+    echo "Вы видите труп убитого приключенца на полу подземелья." > corpse
+    echo "Вы находите следующие предметы на трупе:  " >> corpse
     echo >> corpse
     echo $I >> corpse
     curr=`basename $PWD`
@@ -30,58 +29,56 @@ gameover () {
 }
 
 if [ "$0" = "./pieces" ]; then
-    echo "You sift through the pieces of a shattered statue."
+    echo "Вы перебираете куски разрушенной статуи."
     echo
-    echo "You find nothing of interest in the statue's remains."
+    echo "Вы не находите ничего интересного среди останков статуи."
     exit 1
 fi
 
-echo "A rugged statue stands in the corner of the room."
-echo "Do you approach it?"
+echo "В углу комнаты стоит грубая статуя."
+echo "Подходите ли вы к ней?"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "The statue springs to life, rumbling:"
-   echo '"WHO DARES INTRUDE UPON THE CHAMBER OF SPIRITS?"'
-   printf "\n" 
-   echo "It thrusts a fist at you, hitting you for 5 damage."
-   echo "Deduct 5 from your HP variable:"
+   echo "Статуя оживает, гремит:"
+   echo '"КТО ОСМЕЛИВАЕТСЯ ВТОРГАТЬСЯ В ПАЛАТУ ДУХОВ?"'
+   printf "\n"
+   echo "Она с силой бросает кулак в вашу сторону, нанося вам 5 урона."
+   echo "Отнимите 5 от ваших HP:"
    echo 'let "HP=HP-5"'
    let HP=HP-5
    export HP
    if [ "$HP" -le 0 ]; then
-        echo "You have been slain by the statue."
+        echo "Вы были убиты статуей."
         echo
-        echo "GAME OVER!"
+        echo "ИГРА ОКОНЧЕНА!"
         gameover
         exit 1
    fi
    sed -i 's/coins/diamonds/g' ./treasure
    printf "\n"
-   echo "Do you have a sword?"
+   echo "У вас есть меч?"
    read RESP
    if [ $RESP = "y" -o $RESP = "Y" ]; then
        if grep -Po 'sword' <<< $I &> /dev/null; then
-           echo "You slay the statue!"
+           echo "Вы убили статую!"
            mv statue pieces
        else
            printf "\n"
-           echo "No you don't!"
-           echo 'Run!'
+           echo "Нет, у вас его нет!"
+           echo 'Беги!'
            rm treasure
            rm spell
       fi
    else
-       echo "Run!"
+       echo "Беги!"
    fi
 else
-    echo "You cautiously avoid the statue,"
-    echo "recalling stories of living stone"
-    echo "lying in wait, deep within haunted catacombs."
+    echo "Вы осторожно избегаете статуи,"
+    echo "вспоминая истории о живом камне"
+    echo "ждущем своей жертвы, глубоко в пугающих катакомбах."
    printf "\n"
 fi
-
-
 
 
 
@@ -382,9 +379,8 @@ fi
 
 
 # Hmm, that didn't work.
-# Remember, when files end in a * 
+# Remember, when files end in a *
 # it means they are applications.
 # Try this:
 #
 # ./statue
-

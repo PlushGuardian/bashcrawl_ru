@@ -11,27 +11,28 @@
 # When you're ready to continue playing the game, though, stick to
 # the scrolls. If you're stuck, go to Gitlab and create an issue.
 # We're happy to provide hints.
-# 
-echo "Runes, the language of the ancient mystics that once ruled"
-echo "this land, are inscribed upon the western wall."
-echo "Do you want to read them?"
+#
+
+echo "Руны, язык древних мистиков, которые когда-то правили"
+echo "этой землей, вырезаны на западной стене."
+echo "Хотите ли вы их прочитать?"
 read RESP
 if [ $RESP = "y" -o $RESP = "Y" ]; then
-   echo "You recall the lessons of Caitlyn the Green,"
-   echo "who taught you these ancient letters."
+   echo "Вы вспоминаете уроки Кейтилин Зеленой,"
+   echo "которая обучила вас этим древним буквам."
    printf "\n"
-   echo "The runes are instructions on how to summon"
-   echo "a portal that will allow you to walk through"
-   echo "an invisible door contained in the wall."
+   echo "Руны — это инструкции о том, как вызвать"
+   echo "портал, который позволит вам пройти через"
+   echo "невидимую дверь, скрытую в стене."
    printf "\n"
-   echo "In Bash, a symlink is an *alias* or a *shortcut*"
-   echo "to another file or directory."
-   echo "Create one from this room to the adjacent one:"
+   echo "В Bash, символьная ссылка — это *псевдоним* или *ярлык*"
+   echo "для другого файла или директории."
+   echo "Создайте одну из этой комнаты в соседнюю:"
    echo "ln -f -s `pwd`/../../../chapel/courtyard/aviary/hall portal"
    printf "\n"
 else
-   echo "You decide it is probably best to leave"
-   echo "magickal enscriptions as they are."
+   echo "Вы решаете, что, вероятно, лучше оставить"
+   echo "магические надписи как есть."
 fi
 
 
@@ -349,9 +350,8 @@ fi
 
 
 # Hmm, that didn't work.
-# Remember, when files end in a * 
+# Remember, when files end in a *
 # it means they are applications.
 # Try this:
 #
 # ./spell
-

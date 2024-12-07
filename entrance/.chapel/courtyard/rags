@@ -12,26 +12,27 @@
 # the scrolls. If you're stuck, go to Gitlab and create an issue.
 # We're happy to provide hints.
 #
-echo "There's a pile of old **rags**."
-echo "They are old and worn with age,"
-echo "and probably fell off of some poor adventurer."
+echo "Там куча старых **тряпок**."
+echo "Они старые и изношенные временем,"
+echo "и, вероятно, упали с какого-то несчастного adventurer."
 printf "\n"
-echo "Do you want to take the rags?"
+echo "Вы хотите взять тряпки?"
 read RESP
 
 if [ $RESP = "y" -o $RESP = "Y" ];then
-    echo "As you take the rags from the floor, you find"
-    echo "a salted fish, probably from the rations of"
-    echo "the former owner of these rags."
-    echo "Prepend these item to your inventory:"
+    echo "Когда вы берете тряпки с пола, вы находите"
+    echo "соленую рыбу, вероятно, из провизии"
+    echo "бывшего владельца этих тряпок."
+    echo "Добавьте эти предметы в инвентарь:"
     printf "\n"
     echo "$ export I=rags,fish,\$I"
     printf "\n"
-    echo "Remember, you can check your inventory:"
+    echo "Не забывайте, что вы можете проверить свой инвентарь:"
     printf "\n"
     echo "echo \$I"
     printf "\n"
 fi
+
 #
 #
 #
